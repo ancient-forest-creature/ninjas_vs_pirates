@@ -2,6 +2,7 @@ from classes.ninja import Ninja
 from classes.pirate import Pirate
 import mechanics
 
+mechanics.cls()
 round = 0
 proper_select = 0
 while proper_select < 1:
