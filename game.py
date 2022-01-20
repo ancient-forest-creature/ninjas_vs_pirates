@@ -29,23 +29,15 @@ print("The for battle is here! Fight! fight for your lives!")
 hold = input("\nHit Enter to continue \n")
 mechanics.cls()
 
-# mechanics.is_dead = False
 print("\nNinja Stats:")
 player.show_stats()
 print("\nPirate Stats:")
 opponent.show_stats()
 if select == "N" or select == "n":
     print("Ninjas have the element of surprise. Their special Suprise Attack is ready!")
-    mechanics.rounds_n(player, opponent)
+    result = mechanics.rounds_n(player, opponent)
 else:
-    mechanics.rounds_p(player, opponent)
+    result = mechanics.rounds_p(player, opponent)
 
-# print(f"select is: {select}")
-# michelangelo = Ninja("Michelanglo")
 
-# jack_sparrow = Pirate("Jack Sparrow")
-
-# michelangelo.attack(jack_sparrow)
-# jack_sparrow.show_stats()
-
-print ("\nOUT\n")
+print (f"\n{result}\n")

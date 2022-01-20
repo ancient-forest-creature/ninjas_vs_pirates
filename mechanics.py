@@ -19,7 +19,7 @@ def rounds_n(player, opponent):
                     player.hidden = False
                     player.special = 1
                     if opponent.health <= 0:
-                        return
+                        return (f"The battlefild is silent as pirate blood soaks the ground.\n{player.name} stands victoious over their enemies.")
                     round_select = 1
                 elif (player.special > 2):
                     action = input("You can [A]ttack or try to [D]issapear for your special attack. \nWhat do you do?")
@@ -29,7 +29,7 @@ def rounds_n(player, opponent):
                         player.hidden = False
                         player.special = player.special + 1
                         if opponent.health <= 0:
-                            return
+                            return (f"The battlefild is silent as pirate blood soaks the ground.\n{player.name} stands victoious over their enemies.")
                         round_select = 1
                     elif action == "D" or action == "d":
                         player.disappear()
@@ -43,7 +43,7 @@ def rounds_n(player, opponent):
                     player.hidden = False
                     player.special = player.special + 1
                     if opponent.health <= 0:
-                        return
+                        return (f"The battlefild is silent as pirate blood soaks the ground.\n{player.name} stands victoious over their enemies.")
                     round_select = 1
         num_attacks_opp = opponent.set_attack(opponent.speed)
         print(f"{opponent.name} get {num_attacks_opp} attacks")
@@ -52,15 +52,16 @@ def rounds_n(player, opponent):
             while round_select < 1:
                 if (player.hidden == True):
                     print("The pirates are ready for the fight, but the ninjas are no where in sight.")
+                    opponent.special = opponent.special + 1
                     round_select = 1
-                elif (player.special > 3):
+                elif (opponent.special > 4):
                     print("The pirates have the cannons loaded and ready for a broadside!\n")
                     print("Cannon roar firing shot, chain, and death!")
                     opponent.broadside(player)
                     player.show_stats()
                     opponent.special = 1
                     if player.health <= 0:
-                        return 
+                        return (f"The battle is won and the day is done. Three cheers of victory for {opponent.name}!")
                     round_select = 1
                 elif (opponent.loaded == True):
                     print("The pirates muskets are loaded! They fire a volly!")
@@ -69,10 +70,10 @@ def rounds_n(player, opponent):
                     opponent.loaded = False
                     opponent.special = opponent.special + 1
                     if player.health <= 0:
-                        return
+                        return (f"The battle is won and the day is done. Three cheers of victory for {opponent.name}!")
                     round_select = 1
                 else:
-                    if opponent.health <= 250:
+                    if opponent.health >= 250:
                         print("The pirates load thier muskets for a volloy!")
                         opponent.loaded = True
                         opponent.special = opponent.special + 1
@@ -83,7 +84,7 @@ def rounds_n(player, opponent):
                         player.show_stats()
                         opponent.special = opponent.special + 1
                         if player.health <= 0:
-                            return
+                            return (f"The battle is won and the day is done. Three cheers of victory for {opponent.name}!")
                         round_select = 1
 
 def rounds_p(player, opponent):
@@ -100,7 +101,7 @@ def rounds_p(player, opponent):
                     opponent.hidden = False
                     opponent.special = 1
                     if player.health <= 0:
-                        return
+                        return (f"The battlefild is silent as pirate blood soaks the ground.\n{opponent.name} stands victoious over their enemies.")
                     round_select = 1
                 elif (opponent.special > 2):
                     if i < 2:
@@ -113,7 +114,7 @@ def rounds_p(player, opponent):
                         opponent.hidden = False
                         opponent.special = opponent.special + 1
                         if player.health <= 0:
-                            return
+                            return (f"The battlefild is silent as pirate blood soaks the ground.\n{opponent.name} stands victoious over their enemies.")
                         round_select = 1
                 else:
                     print("The battel rages and ninjas continue to fight!\n")
@@ -122,7 +123,7 @@ def rounds_p(player, opponent):
                     opponent.hidden = False
                     opponent.special = opponent.special + 1
                     if player.health <= 0:
-                        return
+                        return (f"The battlefild is silent as pirate blood soaks the ground.\n{opponent.name} stands victoious over their enemies.")
                     round_select = 1
         num_attacks = player.set_attack(player.speed)
         print(f"number of pirate attacks is {num_attacks}")
@@ -131,6 +132,7 @@ def rounds_p(player, opponent):
             while round_select < 1:
                 if (opponent.hidden == True):
                     print("The pirates are ready for the fight, but the ninjas are no where in sight.")
+                    player.special = player.special + 1
                     round_select = 1
                 elif (player.special > 4):
                     action = input("The pirates have the cannons loaded and ready for a broadside!\nHit Enter to attack!")
@@ -139,7 +141,7 @@ def rounds_p(player, opponent):
                     opponent.show_stats()
                     player.special = 1
                     if opponent.health <= 0:
-                        return 
+                        return (f"The battle is won and the day is done. Three cheers of victory for {player.name}!")
                     round_select = 1
                 elif (player.loaded == True):
                     action = input("You can [A]ttack or [V]olly!\nWhich do you choose?")
@@ -147,7 +149,7 @@ def rounds_p(player, opponent):
                     opponent.show_stats()
                     player.special = player.special + 1
                     if opponent.health <= 0:
-                        return
+                        return (f"The battle is won and the day is done. Three cheers of victory for {player.name}!")
                     round_select = 1
                 else:
                     action = input("You can [A]ttack or [L]oad for a volly. \nWhat do you do?")
@@ -156,10 +158,11 @@ def rounds_p(player, opponent):
                         opponent.show_stats()
                         player.special = player.special + 1
                         if opponent.health <= 0:
-                            return
+                            return (f"The battle is won and the day is done. Three cheers of victory for {player.name}!")
                         round_select = 1
                     elif action == "L" or action == "l":
                         player.loaded = True
+                        player.special = player.special + 1
                         round_select = 1
                     else:
                         print("Invalid selection. Please try again")
