@@ -25,7 +25,7 @@ print(f"The air is thick with smoke and noise. \nThe gulls circle and bank. \n")
 hold = input("\nHit Enter to continue \n")
 mechanics.cls()
 print(f"This land is guarded by the {Ninja.ninja_name}, and they do not take kindly to intrusions by smelly pirates.")
-print("The for battle is here! Fight! fight for your lives!")
+print("The for battle is here! Fight! Fight for your lives!")
 hold = input("\nHit Enter to continue \n")
 mechanics.cls()
 
