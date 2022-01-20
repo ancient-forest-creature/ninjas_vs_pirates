@@ -8,13 +8,26 @@ class Pirate:
         self.name = name
         self.strength = 15
         self.speed = 3
-        self.health = 1000
+        self.health = 500
+        self.special = 1
+        self.loaded = False
         Pirate.pirate_name = name
 
     def show_stats( self ):
         print(f"Name: {self.name}\nStrength: {self.strength}\nSpeed: {self.speed}\nHealth: {self.health}\n")
 
     def attack ( self , ninja ):
-        ninja.health -= self.strength * random.ranint(1,12)
+        ninja.health -= self.strength * random.randint(1,10)
         return self
 
+    def volly(self, ninja):
+        ninja.health -= self.strength * random.randint(3,13)
+        return self
+
+    def broadside(self, pirate):
+        pirate.health -= self.strength * random.randint(10,25)
+        return self
+    
+    @staticmethod
+    def set_attack(speed):
+        return speed * random.randint(3,6) // 9

@@ -8,7 +8,7 @@ class Ninja:
         self.name = name
         self.strength = 10
         self.speed = 5
-        self.health = 1000
+        self.health = 500
         self.hidden = True
         self.special = 3
         # self.disappear = False
@@ -26,18 +26,14 @@ class Ninja:
         return self
     
     def disappear(self):
-        result = self.speed * random.randint(1,10) // 25
-        if result > 1:
+        result =  self.speed * random.randint(1,10) // 15
+        if result >= 1:
             self.hidden = True
             print("The Ninjas disappear in a puff of smoke! They are no where to be seen.")
         else:
             self.hidden = False
-            print("The ninjas try to hid but have failed.")
+            print("The ninjas try to hide but have failed.")
 
     @staticmethod
     def set_attack(speed):
-        # base = speed * random.randint(2,6)
-        # print(base)
-        # print("1st:")
-        # print( base // 10 )
         return speed * random.randint(2,6) // 10
