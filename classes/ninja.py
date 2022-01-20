@@ -11,7 +11,7 @@ class Ninja:
         self.health = 500
         self.hidden = True
         self.special = 3
-        # self.disappear = False
+        self.victory = f"The battlefield is silent as pirate blood soaks the ground.\n {name} stands victorious over their enemies."
         Ninja.ninja_name = name
     
     def show_stats( self ):

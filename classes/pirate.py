@@ -11,6 +11,7 @@ class Pirate:
         self.health = 500
         self.special = 1
         self.loaded = False
+        self.victory = f"The battle is won and the day is done. Three cheers of victory for {name}!"
         Pirate.pirate_name = name
 
     def show_stats( self ):

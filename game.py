@@ -41,4 +41,4 @@ else:
     result = mechanics.rounds_p(player, opponent)
 
 
-print (f"\n{result}\n")
+print (result)
