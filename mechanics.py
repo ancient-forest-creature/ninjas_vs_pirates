@@ -72,7 +72,7 @@ def rounds_n(player, opponent):
                         return
                     round_select = 1
                 else:
-                    if player.health <= 250:
+                    if opponent.health <= 250:
                         print("The pirates load thier muskets for a volloy!")
                         opponent.loaded = True
                         opponent.special = opponent.special + 1
@@ -143,7 +143,7 @@ def rounds_p(player, opponent):
                     round_select = 1
                 elif (player.loaded == True):
                     action = input("You can [A]ttack or [V]olly!\nWhich do you choose?")
-                    player.attack(opponent)
+                    player.volly(opponent)
                     opponent.show_stats()
                     player.special = player.special + 1
                     if opponent.health <= 0:
