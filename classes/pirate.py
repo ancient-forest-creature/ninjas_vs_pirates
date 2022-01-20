@@ -21,11 +21,11 @@ class Pirate:
         return self
 
     def volly(self, ninja):
-        ninja.health -= self.strength * random.randint(3,13)
+        ninja.health -= self.strength * random.randint(5,15)
         return self
 
-    def broadside(self, pirate):
-        pirate.health -= self.strength * random.randint(10,25)
+    def broadside(self, ninja):
+        ninja.health -= self.strength * random.randint(10,25)
         return self
     
     @staticmethod

@@ -53,7 +53,7 @@ def rounds_n(player, opponent):
                 if (player.hidden == True):
                     print("The pirates are ready for the fight, but the ninjas are no where in sight.")
                     round_select = 1
-                elif (player.special > 4):
+                elif (player.special > 3):
                     print("The pirates have the cannons loaded and ready for a broadside!\n")
                     print("Cannon roar firing shot, chain, and death!")
                     opponent.broadside(player)
@@ -75,6 +75,7 @@ def rounds_n(player, opponent):
                     if player.health <= 250:
                         print("The pirates load thier muskets for a volloy!")
                         opponent.loaded = True
+                        opponent.special = opponent.special + 1
                         round_select = 1
                     else:
                         print("The pirates attack!")
@@ -163,37 +164,4 @@ def rounds_p(player, opponent):
                     else:
                         print("Invalid selection. Please try again")
 
-        # for i in range(num_attacks_opp):
-        #     round_select = 0
-        #     while round_select < 1:
-        #         if (player.special > 4):
-        #             action = input("The pirates have the cannons loaded and ready for a broadside!\nHit Enter to attack!")
-        #             print("Cannon roar firing shot, chain, and death!")
-        #             opponent.surprise_attack(player)
-        #             player.show_stats()
-        #             opponent.special = 1
-        #             if player.health <= 0:
-        #                 return 
-        #             round_select = 1
-        #         elif (opponent.loaded == True):
-        #             action = input("You can [A]ttack or [V]olly!\nWhich do you choose?")
-        #             opponent.attack(player)
-        #             player.show_stats()
-        #             opponent.special = opponent.special + 1
-        #             if player.health <= 0:
-        #                 return
-        #             round_select = 1
-        #         else:
-        #             action = input("You can [A]ttack or [L]oad for a volly. \nWhat do you do?")
-        #             if action == "A" or action == "a":
-        #                 opponent.attack(player)
-        #                 player.show_stats()
-        #                 opponent.special = opponent.special + 1
-        #                 if player.health <= 0:
-        #                     return
-        #                 round_select = 1
-        #             elif action == "L" or action == "l":
-        #                 opponent.loaded = True
-        #                 round_select = 1
-        #             else:
-        #                 print("Invalid selection. Please try again")
+    
