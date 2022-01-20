@@ -12,7 +12,7 @@ while proper_select < 1:
         opponent = Pirate("The Jolly Rodgers")
         proper_select = 1
     elif select == "P" or select == "p":
-        player = Pirate("The Dreadnoghts")
+        player = Pirate("The Dreadnoughts")
         opponent = Ninja("Black Sun")
         proper_select = 1
     else:
